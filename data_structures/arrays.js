@@ -1,5 +1,29 @@
 const strings = ['a', 'b', 'c', 'd'];
 
+const basket = ['apples', 'oranges', 'grapes'];
+const detailedBasket = {    // Object literal
+    apples: 5,
+    oranges: 10,
+    grapes: 1000
+}
+
+// all arrays are objects, but not all objects are arrays
+// 1. Looping over arrays
+// interating over arrays
+for (item of basket) {
+    console.log(item);
+}
+
+// 2. Looping over objects
+// enumerating - objects
+for (item in detailedBasket) {
+    console.log(item);
+}
+
+// at() method
+strings.at(0); // 'a'
+strings.at(-1); // 'd'
+
 // push
 strings.push('e'); // O(1)
 
@@ -12,7 +36,16 @@ strings.unshift('x'); // O(n)
 // splice
 strings.splice(2, 0, 'alien'); // O(n) n is the number of elements to be shifted, not simply the size of the array
 
+// Perform an action on every element in an array
+strings.map((string) => { string + '!' });
+// ['a!', 'b!', 'c!', 'd!']
 
+// Filter an array
+strings.filter((string) => { string === 'a' });
+// ['a']
+
+strings.reduce((acc, string) => { return acc + string });
+// 'abcd'
 
 class MyArray {
     constructor() {
